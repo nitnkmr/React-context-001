@@ -1,5 +1,6 @@
 import React from 'react'
 import { useState, createContext, useContext } from "react";
+import { Link } from 'react-router-dom';
 import {ThemeContext} from "../App"
 const themes = {
     light: {
@@ -15,10 +16,10 @@ const Comp = () => {
     const theme = useContext(ThemeContext);
   return (
     <div style={theme?themes.light:themes.dark}>        
-        <div><a style={theme?{color:'blue'}:{color:"yellow"}} href="#">Geekster</a></div>
-        <div><a style={theme?{color:'blue'}:{color:"yellow"}} href="#">home</a></div>
-        <div><a style={theme?{color:'blue'}:{color:"yellow"}} href="#">contact</a></div>
-        <div><a style={theme?{color:'blue'}:{color:"yellow"}} href="#">service</a></div>
+        <div><h4 style={theme?{color:'black'}:{color:"aqua"}} href="#">Geekster</h4></div>
+        <Link to="/home" ><div style={theme?{color:'black'}:{color:"aqua"}}>home</div></Link>
+        <Link to="/contact" ><div style={theme?{color:'black'}:{color:"aqua"}}>contact</div></Link>
+        <Link to="/service"><div style={theme?{color:'black'}:{color:"aqua"}}>service</div></Link>
     </div>
   )
 }
